@@ -5,7 +5,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'http://www.flawedhumanbeing.com',
-  base: '/fhb-v4',
+  site: 'https://www.flawedhumanbeing.com',
+  base: '/',
   integrations: [tailwind()],
 });
