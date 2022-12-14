@@ -6,6 +6,6 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: 'http://www.flawedhumanbeing.com',
-  base: '/flawedhumanbeing.github.io',
+  base: '/fhb-v4',
   integrations: [tailwind()],
 });
