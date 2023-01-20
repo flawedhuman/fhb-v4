@@ -3,13 +3,14 @@ import Head from '../components/Head.astro'
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
 import Logo from '../components/Logo.astro';
+import RssFHB from '../components/RssFHB.vue';
 ---
 <html lang="en" class="dark">
 	<Head />
 	<body class="bg-yellow dark:bg-black">
 		<Navigation />
 		<Logo />
-		<section class="text-center mx-auto max-w-sm">
+		<section class="text-center mx-auto max-w-sm pb-5">
 			<ul class="p-0 list-none">
 				<li class="inline-block p-2">
 				   <a href="https://flawedhumanbeing.bandcamp.com/" target="_blank">
@@ -55,20 +56,23 @@ import Logo from '../components/Logo.astro';
 			   </li>
 		   </ul>
 		</section>
-		<section class="text-center mx-auto max-w-sm">
-			<p class="text-black dark:text-white p-3 text-xl">
-				Matthew Goddard became fascinated with hip-hop and electronic music in college while studying graphic design and marketing. 
-			</p>
-			<p class="text-black dark:text-white p-3">
-				He began making simple beats on his iPhone and soon became obsessed with the art of sampling and instrumental hip-hop itself.
-			</p>
-			<p class="text-black dark:text-white p-3">
-				Over a decade later Matthew is still learning and producing music every day. Enjoy the noise.
-			</p>
-			<hr class="border-t border-black dark:border-white my-5" />
-			<p class="text-black dark:text-white p-3">
-				For all serious inquiries, please email flawedhumanbeing at gmail dot com.
-			</p>
+		<section class="mx-auto max-w-screen-lg">
+			<div class="container aspect-w-16 aspect-h-9 border-black border-2 dark:border-yellow">
+				<iframe src="https://www.youtube.com/embed/jDQQdXG8ZEk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			<div class="container p-5">
+				<h2 class="mb-0 text-2xl text-black dark:text-yellow">'THERE U R' SP-404sx Performance // <span class="text-black dark:text-white">January 7, 2022</span></h2>
+			</div>
+			<div class="container-xl mx-auto border-x border-black">
+				
+			</div>
+			<footer>
+				<hr class="border-t border-black dark:border-white mb-5" />
+				<p class="text-black dark:text-white p-3 text-center">
+					For all serious inquiries, please email flawedhumanbeing at gmail dot com.
+				</p>
+			</footer>
+			<RssFHB client:load />
 		</section>
 	</body>
 </html>
