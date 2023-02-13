@@ -25,7 +25,6 @@
 
 <template>
     <div>
-        <h1 class="text-xl text-center">Latest <a href="https://mastodon.gamedev.place/@sharkjets" class="border-b border-dashed border-teal-500 text-teal-500">toots</a> from Mastodon...</h1>
         <ul>
             <li v-for="post in posts">
                 <div class="p-3 bg-shark rounded-3xl m-5 font-semibold text-gray-300 text-center  w-3/4 mx-auto">

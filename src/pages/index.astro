@@ -1,78 +1,17 @@
 ---
-import Head from '../components/Head.astro'
-import '../styles/global.css';
-import Navigation from '../components/Navigation.astro';
+import Master from '../components/Master.astro';
 import Logo from '../components/Logo.astro';
 import RssFHB from '../components/RssFHB.vue';
+import Footer from '../components/Footer.astro';
 ---
-<html lang="en" class="dark">
-	<Head />
-	<body class="bg-yellow dark:bg-black">
-		<Navigation />
-		<Logo />
-		<section class="text-center mx-auto max-w-sm pb-5">
-			<ul class="p-0 list-none">
-				<li class="inline-block p-2">
-				   <a href="https://flawedhumanbeing.bandcamp.com/" target="_blank">
-					   <img class="hidden dark:block" src="/images/social-icons/icons8-bandcamp-50.png" title="Bandcamp" />
-					   <img class="block dark:hidden" src="/images/social-icons/icons8-bandcamp-50-black.png" title="Bandcamp" />
-				   </a>
-			   </li>
-				<li class="inline-block p-2">
-				   <a href="https://www.youtube.com/c/FlawedHumanBeing" target="_blank">
-					   <img class="hidden dark:block" src="/images/social-icons/icons8-youtube-32.png" title="Youtube Icon" />
-					   <img class="block dark:hidden" src="/images/social-icons/icons8-youtube-32-black.png" title="Youtube Icon" />
-				   </a>
-			   </li>
-				<li class="inline-block p-2">
-				   <a href="https://open.spotify.com/artist/0ywnFmJWQwP4adEG9otvYA?si=OzPWYdFWR3eSd6pMQks85A" target="_blank">
-					   <img class="hidden dark:block" src="/images/social-icons/icons8-spotify-32.png" title="Spotify Icon" />
-					   <img class="block dark:hidden" src="/images/social-icons/icons8-spotify-32-black.png" title="Spotify Icon" />
-				   </a>
-			   </li>
-				<li class="inline-block p-2">
-				   <a href="http://www.instagram.com/flawedhuman" target="_blank">
-					   <img class="hidden dark:block" src="/images/social-icons/icons8-instagram-32.png" title="Instagram Icon" />
-					   <img class="block dark:hidden" src="/images/social-icons/icons8-instagram-32-black.png" title="Instagram Icon" />
-				   </a>
-			   </li>
-				<li class="inline-block p-2">
-				   <a href="http://www.soundcloud.com/flawed-human-being" target="_blank">
-					   <img class="hidden dark:block" src="/images/social-icons/icons8-soundcloud-32.png" title="Soundcloud Icon" />
-					   <img class="block dark:hidden" src="/images/social-icons/icons8-soundcloud-32-black.png" title="Soundcloud Icon" />
-				   </a>
-			   </li>
-				<li class="inline-block p-2">
-				   <a href="https://music.apple.com/us/artist/flawed-human-being/1352533505" target="_blank">
-					   <img class="hidden dark:block" src="/images/social-icons/icons8-music-32.png" title="Apple Music Icon" />
-					   <img class="block dark:hidden" src="/images/social-icons/icons8-music-32-black.png" title="Apple Music Icon" />
-				   </a>
-			   </li>
-				<li class="inline-block p-2">
-				   <a href="https://dribbble.com/flawedhumanbeing" target="_blank">
-					   <img class="hidden dark:block" src="/images/social-icons/icons8-dribbble-32.png" title="Dribbble Icon" />
-					   <img class="block dark:hidden" src="/images/social-icons/icons8-dribbble-32-black.png" title="Dribbble Icon" />
-				   </a>
-			   </li>
-		   </ul>
-		</section>
-		<section class="mx-auto max-w-screen-lg">
-			<div class="container aspect-w-16 aspect-h-9 border-black border-2 dark:border-yellow">
-				<iframe src="https://www.youtube.com/embed/jDQQdXG8ZEk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			</div>
-			<div class="container p-5">
-				<h2 class="mb-0 text-2xl text-black dark:text-yellow">'THERE U R' SP-404sx Performance // <span class="text-black dark:text-white">January 7, 2022</span></h2>
-			</div>
-			<div class="container-xl mx-auto border-x border-black">
-				
-			</div>
-			<footer>
-				<hr class="border-t border-black dark:border-white mb-5" />
-				<p class="text-black dark:text-white p-3 text-center">
-					For all serious inquiries, please email flawedhumanbeing at gmail dot com.
-				</p>
-			</footer>
-			<!-- <RssFHB client:load /> -->
-		</section>
-	</body>
-</html>
+<Master>
+    <div class="columns-3 justify-center">
+        <Logo />
+        <img src="/images/album-art/abstractions.jpg">
+        <div>
+            grid
+        </div>
+    </div>
+    <!-- <RssFHB client:load /> -->
+    <Footer />
+</Master>
