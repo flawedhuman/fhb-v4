@@ -3,14 +3,20 @@ import { ref, onMounted } from 'vue';
 
 export default {
     setup() {
-        const rssUrl = 'https://theflawedhumanbeings.substack.com/feed';
         const posts = ref([]);
 
         const getPosts = async () => {
             try {
-                // Using cors-anywhere as a proxy to avoid CORS issues
-                const corsProxy = 'https://cors-anywhere.herokuapp.com/';
-                const response = await fetch(corsProxy + rssUrl);
+                // Using allorigins as a CORS proxy
+                const proxyUrl = 'https://api.allorigins.win/raw?url=' + 
+                               encodeURIComponent('https://theflawedhumanbeings.substack.com/feed');
+                
+                console.log('Fetching from:', proxyUrl);
+                
+                const response = await fetch(proxyUrl);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
                 const text = await response.text();
                 
                 // Parse XML to DOM
@@ -19,21 +25,29 @@ export default {
                 
                 // Extract items
                 const items = xmlDoc.getElementsByTagName('item');
+                console.log('Found items:', items.length);
                 
                 // Convert items to array of objects
-                posts.value = Array.from(items).slice(0, 12).map(item => ({
-                    title: item.getElementsByTagName('title')[0]?.textContent || '',
-                    description: item.getElementsByTagName('description')[0]?.textContent || '',
-                    pubDate: new Date(item.getElementsByTagName('pubDate')[0]?.textContent || '').toLocaleDateString(),
-                    link: item.getElementsByTagName('link')[0]?.textContent || ''
-                }));
+                posts.value = Array.from(items).slice(0, 12).map(item => {
+                    const post = {
+                        title: item.getElementsByTagName('title')[0]?.textContent || '',
+                        description: item.getElementsByTagName('description')[0]?.textContent || '',
+                        pubDate: new Date(item.getElementsByTagName('pubDate')[0]?.textContent || '').toLocaleDateString(),
+                        link: item.getElementsByTagName('link')[0]?.textContent || ''
+                    };
+                    console.log('Processed post:', post.title);
+                    return post;
+                });
+
+                console.log('Successfully loaded posts:', posts.value.length);
             } catch (error) {
-                console.error('Error fetching RSS feed:', error);
+                console.error('Error fetching posts:', error);
                 posts.value = [];
             }
         };
 
         onMounted(() => {
+            console.log('Component mounted, fetching posts...');
             getPosts();
         });
 
@@ -46,7 +60,10 @@ export default {
 
 <template>
     <div>
-        <ul>
+        <div v-if="posts.length === 0" class="p-5 text-white">
+            Loading posts...
+        </div>
+        <ul v-else>
             <li v-for="post in posts" :key="post.link">
                 <div class="p-5 font-semibold text-white mx-auto">
                     <div class="inline-block text-left">
