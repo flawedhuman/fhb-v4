@@ -3,14 +3,12 @@ import { ref, onMounted } from 'vue';
 
 export default {
     setup() {
-        const rssUrl = 'https://theflawedhumanbeings.substack.com/feed';
+        const rssUrl = '/api/rss-proxy'; // We'll create this endpoint on your backend
         const posts = ref([]);
 
         const getPosts = async () => {
             try {
-                // Using cors-anywhere as a proxy to avoid CORS issues
-                const corsProxy = 'https://cors-anywhere.herokuapp.com/';
-                const response = await fetch(corsProxy + rssUrl);
+                const response = await fetch(rssUrl);
                 const text = await response.text();
                 
                 // Parse XML to DOM
@@ -27,6 +25,8 @@ export default {
                     pubDate: new Date(item.getElementsByTagName('pubDate')[0]?.textContent || '').toLocaleDateString(),
                     link: item.getElementsByTagName('link')[0]?.textContent || ''
                 }));
+
+                console.log('Posts loaded:', posts.value.length);
             } catch (error) {
                 console.error('Error fetching RSS feed:', error);
                 posts.value = [];
