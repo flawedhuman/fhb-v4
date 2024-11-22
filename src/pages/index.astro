@@ -3,8 +3,10 @@ import Master from '../components/Master.astro';
 import Logo from '../components/Logo.astro';
 import RssFHB from '../components/RssFHB.vue';
 import Footer from '../components/Footer.astro';
+import cardElement from '../components/vue/cardElement.vue';
 ---
 <Master>
+    <cardElement />
     <div class="header-wrap grid grid-cols-1 md:grid-cols-3 place-items-center bg-yellow">
         <Logo />
         <div class="album-art-grid">
@@ -172,6 +174,7 @@ import Footer from '../components/Footer.astro';
             </div>
         </div>
   </div>
+
   <div class="bg-black">
     <div class="md:w-1/2 mx-auto p-10 p-md-20">
       <h2 class="text-white uppercase text-2xl">Writing</h2>
@@ -184,6 +187,14 @@ import Footer from '../components/Footer.astro';
   <Footer />
 </Master>
 <style>
+
+    /* STRIPE */
+
+    .my-input {
+      padding: 20px;
+      border: none;
+      outline: none;
+    }
 
     .header-wrap {
       background: #FFF500 url(/images/yellow-static.gif) no-repeat top center;
@@ -267,5 +278,3 @@ for (var i = 0; i < links.length; i++) {
     }
   });
 }
-
-</script>
