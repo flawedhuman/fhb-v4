@@ -1,19 +1,16 @@
 <script>
+import { ref, onMounted } from 'vue';
+
 export default {
-    data() {
-        return {
-            rssUrl: 'https://theflawedhumanbeings.substack.com/feed',
-            posts: []
-        }
-    },
-    mounted() {
-        this.getPosts();
-    },
-    methods: {
-        async getPosts() {
+    setup() {
+        const rssUrl = 'https://theflawedhumanbeings.substack.com/feed';
+        const posts = ref([]);
+
+        const getPosts = async () => {
             try {
-                // Fetch the RSS feed
-                const response = await fetch(this.rssUrl);
+                // Using cors-anywhere as a proxy to avoid CORS issues
+                const corsProxy = 'https://cors-anywhere.herokuapp.com/';
+                const response = await fetch(corsProxy + rssUrl);
                 const text = await response.text();
                 
                 // Parse XML to DOM
@@ -21,20 +18,28 @@ export default {
                 const xmlDoc = parser.parseFromString(text, 'text/xml');
                 
                 // Extract items
-                const items = xmlDoc.querySelectorAll('item');
+                const items = xmlDoc.getElementsByTagName('item');
                 
                 // Convert items to array of objects
-                this.posts = Array.from(items).slice(0, 12).map(item => ({
-                    title: item.querySelector('title')?.textContent || '',
-                    description: item.querySelector('description')?.textContent || '',
-                    pubDate: new Date(item.querySelector('pubDate')?.textContent || '').toLocaleDateString(),
-                    link: item.querySelector('link')?.textContent || ''
+                posts.value = Array.from(items).slice(0, 12).map(item => ({
+                    title: item.getElementsByTagName('title')[0]?.textContent || '',
+                    description: item.getElementsByTagName('description')[0]?.textContent || '',
+                    pubDate: new Date(item.getElementsByTagName('pubDate')[0]?.textContent || '').toLocaleDateString(),
+                    link: item.getElementsByTagName('link')[0]?.textContent || ''
                 }));
             } catch (error) {
                 console.error('Error fetching RSS feed:', error);
-                this.posts = [];
+                posts.value = [];
             }
-        }
+        };
+
+        onMounted(() => {
+            getPosts();
+        });
+
+        return {
+            posts
+        };
     }
 }
 </script>
@@ -60,5 +65,13 @@ export default {
                 </div>                    
             </li>
         </ul>
-    </div>  
+    </div>
 </template>
+
+<style scoped>
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+</style>
