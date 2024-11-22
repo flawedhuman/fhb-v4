@@ -1,6 +1,7 @@
 ---
 const { title = "FHB 4.0" } = Astro.props;
 import '../styles/global.css';
+import CardElement from '../components/vue/CardElement.vue';
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +29,8 @@ import '../styles/global.css';
     /></noscript>
     <!-- End Meta Pixel Code -->
 </head>
-<body>    
+<body>
+    <CardElement />
     <slot />
 </body>
 </html>

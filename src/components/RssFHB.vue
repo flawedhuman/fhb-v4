@@ -2,7 +2,7 @@
     export default {
         data() {
             return {
-                rssUrl: 'https://api.rss2json.com/v1/api.json?rss_url=https://flawedhumanbeing.substack.com/feed.rss',
+                rssUrl: 'https://flawdhumanbeing.substack.com/feed',
                 posts: []
             }
         },
@@ -17,7 +17,7 @@
             },
             ParseJson(data){
                 console.log(data.items);
-                this.posts = data.items.slice(0, 3);
+                this.posts = data.items.slice(0, 10);
             }
         }
     }
@@ -34,7 +34,7 @@
                         <br />                        
                         <div class="grid grid-cols-2">
                             <div class="text-left" style="color: #FFF500;">{{ post.pubDate }}</div>
-                            <div class="text-right"><a v-bind:href="post.link" class="text-white underline">View on SubStack</a></div>
+                            <div class="text-right"><a v-bind:href="post.link" class="text-white underline">View on SubStack.com!</a></div>
                         </div>                        
                     </div>                    
                 </div>                    
