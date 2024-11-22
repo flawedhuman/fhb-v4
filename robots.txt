@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://flawedhumanbeing.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://flawedhumanbeing.com/images/album-art/abstractions.jpg</image:loc>
+      <image:title>Abstractions Album</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flawedhumanbeing.com/images/album-art/100522-beat-set-vol-1-cover.png</image:loc>
+      <image:title>Live SP-404 Beat Set Volume 1</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flawedhumanbeing.com/images/album-art/mcfeely.jpg</image:loc>
+      <image:title>McFeely Album</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flawedhumanbeing.com/images/album-art/404-beat-set.jpg</image:loc>
+      <image:title>404 Beat Set Album</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flawedhumanbeing.com/images/album-art/unforgettable.jpg</image:loc>
+      <image:title>Unforgettable Album</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flawedhumanbeing.com/images/album-art/cluttered.jpg</image:loc>
+      <image:title>Cluttered Album</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flawedhumanbeing.com/images/album-art/cliffhanger.jpg</image:loc>
+      <image:title>Cliffhanger Album</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flawedhumanbeing.com/images/album-art/innerverse.jpg</image:loc>
+      <image:title>Innerverse Album</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flawedhumanbeing.com/images/album-art/dust.jpg</image:loc>
+      <image:title>Dust Album</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flawedhumanbeing.com/images/album-art/too-many-secrets.jpg</image:loc>
+      <image:title>Too Many Secrets Album</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flawedhumanbeing.com/images/album-art/evergreen.jpg</image:loc>
+      <image:title>Evergreen Album</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flawedhumanbeing.com/images/album-art/hindsight.jpg</image:loc>
+      <image:title>Hindsight Album</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flawedhumanbeing.com/images/album-art/fhb.jpg</image:loc>
+      <image:title>Flawed Human Being Album</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flawedhumanbeing.com/images/album-art/what-if.jpg</image:loc>
+      <image:title>What If Album</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flawedhumanbeing.com/images/album-art/kung-fu.jpg</image:loc>
+      <image:title>Kung Fu Album</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flawedhumanbeing.com/images/album-art/pretend.jpg</image:loc>
+      <image:title>Pretend Album</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flawedhumanbeing.com/images/album-art/prog.jpg</image:loc>
+      <image:title>Prog Album</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flawedhumanbeing.com/images/album-art/+.jpg</image:loc>
+      <image:title>Plus Album</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flawedhumanbeing.com/images/album-art/beta.jpg</image:loc>
+      <image:title>Beta Album</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flawedhumanbeing.com/images/album-art/stream.jpg</image:loc>
+      <image:title>Stream Album</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://flawedhumanbeing.com/writing</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://theflawedhumanbeings.substack.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>
