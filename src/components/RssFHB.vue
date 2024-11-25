@@ -3,7 +3,7 @@ import { ref, onMounted } from 'vue';
 
 export default {
     setup() {
-        const rssUrl = '/api/rss-proxy'; // We'll create this endpoint on your backend
+        const rssUrl = 'https://api.substack.com/feed/podcast/3376381.rss'; // We'll create this endpoint on your backend
         const posts = ref([]);
 
         const getPosts = async () => {
