@@ -1,10 +1,16 @@
 ---
-import Head from "../components/Head.astro"
+import { ViewTransitions } from 'astro:transitions';
+import Head from "../components/Head.astro";
+import SiteNav from "../components/SiteNav.astro";
+
 ---
 <!DOCTYPE html>
 <html lang="en">
-<Head />
+<head>
+    <Head />
+    <ViewTransitions />
+</head>
 <body>
-    
+    <SiteNav />
 </body>
 </html>

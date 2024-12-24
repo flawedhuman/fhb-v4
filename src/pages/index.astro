@@ -1,8 +1,14 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import { ClientRouter } from 'astro:transitions';
+import ColorPicker from '../components/ColorPicker.astro';
 ---
 
 <MainLayout>
 	<ClientRouter />
+	<ColorPicker />
+	<h1 class="random-text-color" data-palette="dark">HELLO</h1>
+	<h2 class="random-text-color" data-palette="dark">
+		Random dark text color
+	</h2>
 </MainLayout>
