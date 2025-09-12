@@ -1,16 +1,33 @@
 ---
+import { getCollection } from 'astro:content';
 
+const allArtwork = await getCollection('artwork');
+const sortedArtwork = allArtwork
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+
+const latestPiece = sortedArtwork[0];
+const previousPiece = sortedArtwork[1]; // Second most recent
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html>
+<body>
+  <h1>My Digital Art</h1>
+  
+  {latestPiece && (
+    <div>
+      <h2>Latest Work: {latestPiece.data.title}</h2>
+      <img src={latestPiece.data.image} alt={latestPiece.data.title} />
+      <a href={`/artwork/${latestPiece.slug}`}>View Full Piece →</a>
+    </div>
+  )}
+
+  {previousPiece && (
+    <div style="margin-top: 2rem;">
+      <h3>Previous Work:</h3>
+      <a href={`/artwork/${previousPiece.slug}`}>
+        <strong>{previousPiece.data.title}</strong>
+      </a>
+    </div>
+  )}
+</body>
 </html>
