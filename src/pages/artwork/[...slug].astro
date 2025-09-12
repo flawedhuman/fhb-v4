@@ -29,43 +29,43 @@ const { Content } = await entry.render();
 ---
 
 <html>
-<head>
-  <title>{entry.data.title}</title>
-</head>
-<body>
-  <h1>{entry.data.title}</h1>
-  
-  <img src={entry.data.image} alt={entry.data.title} />
-  
-  <div class="artwork-description">
-    <Content />
-  </div>
-  
-  <p>Created: {entry.data.publishDate.toLocaleDateString()}</p>
-  
-  <!-- Navigation buttons -->
-  <nav style="display: flex; justify-content: space-between; margin: 2rem 0; padding: 1rem 0; border-top: 1px solid #eee;">
-    <div>
-      {prevEntry ? (
-        <a href={`/artwork/${prevEntry.slug}`}>
-          ← Previous: {prevEntry.data.title}
-        </a>
-      ) : (
-        <span style="color: #ccc;">← No previous work</span>
-      )}
+  <head>
+    <title>{entry.data.title}</title>
+  </head>
+  <body>
+    <h1>{entry.data.title}</h1>
+    
+    <img src={entry.data.image} alt={entry.data.title} />
+    
+    <div class="artwork-description">
+      <Content />
     </div>
     
-    <div>
-      {nextEntry ? (
-        <a href={`/artwork/${nextEntry.slug}`}>
-          Next: {nextEntry.data.title} →
-        </a>
-      ) : (
-        <span style="color: #ccc;">No newer work →</span>
-      )}
-    </div>
-  </nav>
-  
-  <a href="/">← Back to Home</a>
-</body>
+    <p>Created: {entry.data.publishDate.toLocaleDateString()}</p>
+    
+    <!-- Navigation buttons -->
+    <nav style="display: flex; justify-content: space-between; margin: 2rem 0; padding: 1rem 0; border-top: 1px solid #eee;">
+      <div>
+        {prevEntry ? (
+          <a href={`/artwork/${prevEntry.slug}`}>
+            ← Previous: {prevEntry.data.title}
+          </a>
+        ) : (
+          <span style="color: #ccc;">← No previous work</span>
+        )}
+      </div>
+      
+      <div>
+        {nextEntry ? (
+          <a href={`/artwork/${nextEntry.slug}`}>
+            Next: {nextEntry.data.title} →
+          </a>
+        ) : (
+          <span style="color: #ccc;">No newer work →</span>
+        )}
+      </div>
+    </nav>
+    
+    <a href="/">← Back to Home</a>
+  </body>
 </html>

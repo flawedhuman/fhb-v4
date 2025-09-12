@@ -10,24 +10,24 @@ const previousPiece = sortedArtwork[1]; // Second most recent
 ---
 
 <html>
-<body>
-  <h1>My Digital Art</h1>
-  
-  {latestPiece && (
-    <div>
-      <h2>Latest Work: {latestPiece.data.title}</h2>
-      <img src={latestPiece.data.image} alt={latestPiece.data.title} />
-      <a href={`/artwork/${latestPiece.slug}`}>View Full Piece →</a>
-    </div>
-  )}
+  <body>
+    <h1>My Digital Art</h1>
+    
+    {latestPiece && (
+      <div>
+        <h2>Latest Work: {latestPiece.data.title}</h2>
+        <img src={latestPiece.data.image} alt={latestPiece.data.title} />
+        <a href={`/artwork/${latestPiece.slug}`}>View Full Piece →</a>
+      </div>
+    )}
 
-  {previousPiece && (
-    <div style="margin-top: 2rem;">
-      <h3>Previous Work:</h3>
-      <a href={`/artwork/${previousPiece.slug}`}>
-        <strong>{previousPiece.data.title}</strong>
-      </a>
-    </div>
-  )}
-</body>
+    {previousPiece && (
+      <div style="margin-top: 2rem;">
+        <h3>Previous Work:</h3>
+        <a href={`/artwork/${previousPiece.slug}`}>
+          <strong>{previousPiece.data.title}</strong>
+        </a>
+      </div>
+    )}
+  </body>
 </html>
