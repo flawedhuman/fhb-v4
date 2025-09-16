@@ -10,12 +10,11 @@ const latestPiece = sortedArtwork[0];
 const previousPiece = sortedArtwork[1];
 ---
 
-<BaseLayout title="My Digital Art Portfolio">
-  <h1>My Digital Art</h1>
+<BaseLayout title="FLAWEDHUMANBEING.COM">
   
   {latestPiece ? (
     <div>
-      <h2>Latest Work: {latestPiece.data.title}</h2>
+      <h1>{latestPiece.data.title}</h1>
       <img src={latestPiece.data.image} alt={latestPiece.data.title} />
       <a href={`/artwork/${latestPiece.slug}`}>View Full Piece →</a>
     </div>
@@ -25,7 +24,7 @@ const previousPiece = sortedArtwork[1];
 
   {previousPiece && (
     <div style="margin-top: 2rem;">
-      <h3>Previous Work:</h3>
+      <h2>Previous Work:</h2>
       <a href={`/artwork/${previousPiece.slug}`}>
         <strong>{previousPiece.data.title}</strong>
       </a>
