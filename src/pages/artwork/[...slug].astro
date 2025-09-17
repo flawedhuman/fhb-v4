@@ -30,37 +30,70 @@ const { Content } = await entry.render();
 
 <BaseLayout title={entry.data.title}>
   <h1>{entry.data.title}</h1>
-  
-  <img src={entry.data.image} alt={entry.data.title} />
-  
-  <div class="artwork-description">
-    <Content />
-  </div>
-  
-  <p>Created: {entry.data.publishDate.toLocaleDateString()}</p>
-  
-  <!-- Navigation buttons -->
-  <nav style="display: flex; justify-content: space-between; margin: 2rem 0; padding: 1rem 0; border-top: 1px solid #eee;">
+  <div class="art-wrap">
     <div>
       {prevEntry ? (
         <a href={`/artwork/${prevEntry.slug}`}>
-          ← Previous: {prevEntry.data.title}
+          <img src="/images/previous-arrow.svg" alt="Previous">
         </a>
       ) : (
         <span style="color: #ccc;">← No previous work</span>
       )}
     </div>
-    
+    <img src={entry.data.image} alt={entry.data.title} />
     <div>
       {nextEntry ? (
         <a href={`/artwork/${nextEntry.slug}`}>
-          Next: {nextEntry.data.title} →
+          <img src="/images/next-arrow.svg" alt="Next">
         </a>
       ) : (
         <span style="color: #ccc;">No newer work →</span>
       )}
     </div>
-  </nav>
-  
-  <a href="/">← Back to Home</a>
+  </div>
+  <div class="logo">
+    <a href="/"><img src="/images/fhb-logo-black.png" alt="FLAWEDHUMANBEING"></a>
+  </div>
+  <div class="artwork-description">
+    <Content />
+    <p class="content-date">{entry.data.publishDate.toLocaleDateString()}</p>
+  </div>
 </BaseLayout>
+
+<style>
+
+  h1 {
+    text-align: center;
+    color: var(--primary-yellow);
+  }
+
+  .art-wrap {
+    margin-inline: auto;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .artwork-description {
+    margin-inline: auto;
+    padding: 0 2rem;
+    max-width: 70ch;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: var(--primary-yellow);
+  }
+
+  .content-date {
+    font-size: 1rem;
+    color: #FFF;
+  }
+
+  .logo {
+    margin-block: 1.5rem;
+    margin-inline: auto;
+    display: block;
+    background-color: var(--primary-yellow);
+    max-width: 250px;
+  }
+</style>

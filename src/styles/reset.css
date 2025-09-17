@@ -32,6 +32,7 @@ body {
   line-height: 1.5;
   background-color: #000;
   color: #FFF;
+  font-family: var(--font-uppercase), Arial, Helvetica, sans-serif;
 }
 
 /* Set shorter line heights on headings and interactive elements */

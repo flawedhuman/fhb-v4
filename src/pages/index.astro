@@ -11,23 +11,42 @@ const previousPiece = sortedArtwork[1];
 ---
 
 <BaseLayout title="FLAWEDHUMANBEING.COM">
-  
-  {latestPiece ? (
+  <h1>{latestPiece.data.title}</h1>
+  <div class="art-wrap">
+    <a href={`/artwork/${previousPiece.slug}`}>
+      <img src="/images/previous-arrow.svg" alt="Previous">
+    </a>
     <div>
-      <h1>{latestPiece.data.title}</h1>
-      <img src={latestPiece.data.image} alt={latestPiece.data.title} />
-      <a href={`/artwork/${latestPiece.slug}`}>View Full Piece →</a>
+      <img style="border: 1px var(--primary-yellow) solid;" src={latestPiece.data.image} alt={latestPiece.data.title} />
     </div>
-  ) : (
-    <p>No artwork found!</p>
-  )}
-
-  {previousPiece && (
-    <div style="margin-top: 2rem;">
-      <h2>Previous Work:</h2>
-      <a href={`/artwork/${previousPiece.slug}`}>
-        <strong>{previousPiece.data.title}</strong>
-      </a>
-    </div>
-  )}
+    <a href={`/artwork/${latestPiece.slug}`}><img src="/images/next-arrow.svg" alt="Next"></a>
+  </div>
+  <div class="logo">
+    <a href="/"><img src="/images/fhb-logo-black.png" alt="FLAWEDHUMANBEING"></a>
+  </div>
 </BaseLayout>
+
+<style>
+
+  h1 {
+    text-align: center;
+    color: var(--primary-yellow);
+  }
+
+  .art-wrap {
+    margin-inline: auto;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo {
+    margin-block: 1.5rem;
+    margin-inline: auto;
+    display: block;
+    background-color: var(--primary-yellow);
+    max-width: 250px;
+  }
+
+</style>

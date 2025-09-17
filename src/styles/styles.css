@@ -1,1 +1,8 @@
 @import url(reset.css);
+
+:root {
+    /* COLORS */
+    --primary-yellow: #DDFF00;
+    /* FONTS */
+    --font-uppercase: 'Bebas Neue', Arial, Verdana, sans-serif;
+}
